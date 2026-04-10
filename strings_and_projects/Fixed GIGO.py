@@ -1,5 +1,8 @@
 def unique_name_collector(count=2):
     unique_names = {}
+    if count < 0:
+        print("Count must be positive")
+        return []
     while len(unique_names) < count:
         name = input("Enter name: ").strip()
         if not name:
@@ -14,5 +17,5 @@ def unique_name_collector(count=2):
         unique_names[name.lower()] = name
     return list(unique_names.values())
 
-result = unique_name_collector()
+result = unique_name_collector(-5)
 print(f"Collected names: {result}")
