@@ -4,10 +4,13 @@ def safe_collector(count=2, max_attempts=10):
 
     while len(unique_names) < count and attempts < max_attempts:
         name = input("Enter name: ").strip()
-        attempts += 1
+
+       if not name:
+        print('Empty name! Try again') 
 
         if name.lower() in unique_names:
             print(f"Duplicate! {max_attempts - attempts} attempts left")
+            attempts += 1
         else:
             unique_names[name.lower()] = name
 
