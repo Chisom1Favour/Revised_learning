@@ -1,3 +1,5 @@
+# Always validate input at the boundaries. Never trust user input
+
 def unique_name_collector(count=2):
     unique_names = {}
     if count < 0:
@@ -17,5 +19,5 @@ def unique_name_collector(count=2):
         unique_names[name.lower()] = name
     return list(unique_names.values())
 
-result = unique_name_collector(-5)
+result = unique_name_collector()
 print(f"Collected names: {result}")
